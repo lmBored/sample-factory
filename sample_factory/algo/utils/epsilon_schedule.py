@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class EpsilonSchedule:
     def __init__(
         self,
@@ -10,7 +13,7 @@ class EpsilonSchedule:
         self.decay_steps = decay_steps
         self._step = 0
 
-    def get_epsilon(self, step: int | None = None) -> float:
+    def get_epsilon(self, step: Optional[int] = None) -> float:
         if step is None:
             step = self._step
 
